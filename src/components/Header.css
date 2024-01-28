@@ -1,0 +1,53 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 80px;
+}
+
+.logo {
+  display: flex;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 32px;
+  color: rgba(8, 53, 86, 1);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  column-gap: 30px;
+  margin-right: 50px;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: rgba(8, 53, 86, 1);
+  font-size: 24px;
+}
+
+a.active:not(button a) {
+  color: rgba(32, 135, 110, 1);
+}
+
+nav button {
+  text-decoration: none;
+  background: rgba(8, 53, 86, 1);
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+nav button a {
+  display: inline-block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #fff;
+}
