@@ -47,7 +47,7 @@ function Header() {
               className="md:mr-8 text-xl md:my-0 py-3 mx-auto w-full text-center cursor-pointer md:py-0"
             >
               <NavLink
-                className="text-base lg:text-[24px] block md:inline"
+                className=" lg:text-[18px] block md:inline  text-sm font-semibold leading-6"
                 to="/"
               >
                 Home
@@ -58,7 +58,7 @@ function Header() {
               className="md:mr-8 text-xl md:my-0 py-3 mx-auto w-full text-center cursor-pointer md:py-0"
             >
               <NavLink
-                className="text-base lg:text-[24px] block md:inline"
+                className="lg:text-[18px] block md:inline  text-sm font-semibold leading-"
                 to="about"
               >
                 About
@@ -69,7 +69,7 @@ function Header() {
               className="md:mr-8 text-xl md:my-0 py-3 mx-auto w-full text-center cursor-pointer md:py-0"
             >
               <NavLink
-                className="text-base lg:text-[24px] block md:inline"
+                className="lg:text-[18px] block md:inline  text-sm font-semibold leading-"
                 to="/courses"
               >
                 Courses
@@ -80,7 +80,7 @@ function Header() {
               className="md:mr-8 text-xl md:my-0 py-3 mx-auto w-full text-center cursor-pointer md:py-0"
             >
               <NavLink
-                className="text-base lg:text-[24px] block md:inline"
+                className="lg:text-[18px] block md:inline  text-sm font-semibold leading-"
                 to="/team"
               >
                 Team
@@ -92,8 +92,7 @@ function Header() {
             <button>
               <NavLink
                 className="text-base lg:text-[24px] md:my-0 md:py-[10px] md:px-[16px] py-[6px] px-[10px] inline-block"
-                to="/signup"
-              >
+                to="/signup" >
                 Get Started
               </NavLink>
             </button>
