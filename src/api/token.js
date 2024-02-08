@@ -1,0 +1,2 @@
+const token =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzRjOTFmMTdiNzQ5ZWYwMzhkMGMxNyIsImlhdCI6MTcwNzM5NTUyMSwiZXhwIjoxNzA5OTg3NTIxfQ.6Bf_Ym108egd1Pi7-WkbFUkhxPh8mjciNnWNYFkgKn0";
