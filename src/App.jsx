@@ -26,7 +26,7 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/login" element={<SigninForm />} />
           <Route path="/logs" element={<Hp />} />
-          <Route path="/user" element={<UserProfilePage />} />
+          <Route path="/user/:id" element={<UserProfilePage />} />
         </Routes>
 
         <Footer />

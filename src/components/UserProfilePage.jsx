@@ -1,29 +1,32 @@
 import UserImg from "../assets/user.png";
 import EmailIcon from "../assets/email.png";
 import CourseIcon from "../assets/course.png";
+import { getUser } from "../api/user";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 function UserProfilePage() {
-  const user = {
-    bio: "Hi, I'm Jonas! I'm one of Udemy's Top Instructors and all my premium courses have earned the best-selling status for outstanding performance and student satisfaction. I'm a full-stack web developer and designer with a passion for building beautiful web interfaces from scratch. I've been building websites and apps since 2010  and also have a Master's degree in Engineering.",
-    specialization: "",
-    years_of_experience: 5,
-    firstName: "Teodora",
-    lastName: "Kocic",
-    dob: "1.1.1990",
-    email: "test@test.com",
-    profilePhoto: "",
-    type: "instructor",
-    num_of_courses: 2,
-  };
+  const { id } = useParams();
+
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    getUser(id)
+      .then((userData) => {
+        console.log(userData);
+        setUser(userData);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <div className="bg-[#20876E] text-white p-[15px] md:p-[24px] xl:mx-[80px] rounded-[22px] mx-[28px] mb-[20px]">
-      <p className="text-center mb-[20px]">{user.type.toUpperCase()}</p>
+      <p className="text-center mb-[20px]">{user?.role?.toUpperCase()}</p>
 
-      <div className="flex flex-col md:flex-row md:gap-x-[25%]">
+      <div className="flex flex-col md:flex-row">
         <div
-          className={`flex flex-col items-center md:mx-[40px] mb-[20px] ${
-            user.type === "instructor" ? "md:w-3/5" : "md:w-auto"
+          className={`flex flex-col flex-1	 items-center md:mx-[40px] mb-[20px] ${
+            user.role === "instructor" ? "" : "md:w-auto"
           }`}
         >
           <img
@@ -40,7 +43,7 @@ function UserProfilePage() {
               <p>{user.email}</p>
             </div>
 
-            {user.type === "instructor" && (
+            {user.role === "instructor" && (
               <div className="flex">
                 <img className="w-[25px] mr-[10px]" src={CourseIcon} alt="" />
                 <p>{user.num_of_courses} courses</p>
@@ -49,8 +52,8 @@ function UserProfilePage() {
           </div>
         </div>
 
-        <div className="text-center md:text-left mb-[10px]">
-          {user.type === "instructor" && (
+        <div className="text-center md:text-left mb-[10px] flex-1	">
+          {user.role === "instructor" && (
             <div className="mb-[20px] flex flex-col gap-y-[10px]">
               <h2 className="text-[22px] md:text-[28px] font-bold">About me</h2>
               <p>
@@ -68,7 +71,7 @@ function UserProfilePage() {
 
           <div className="flex flex-col gap-y-[10px]">
             <h2 className="text-[22px] md:text-[28px] font-bold">
-              {user.type === "instructor" ? "My" : "Enrolled"} Courses (5)
+              {user.role === "instructor" ? "My" : "Enrolled"} Courses (5)
             </h2>
             <div>Card</div>
           </div>
