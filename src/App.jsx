@@ -11,6 +11,7 @@ import LogIn from "./components/LogIn";
 import Footer from "./components/Footer";
 import SignupForm from "./_auth/forms/SignupForm";
 import SigninForm from "./_auth/forms/SigninForm"
+import Hp from "./components/hp";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           <Route path="/team" element={<TeamPage />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/login" element={<SigninForm />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/logs" element={<Hp />} />
         </Routes>
 
         <Footer />

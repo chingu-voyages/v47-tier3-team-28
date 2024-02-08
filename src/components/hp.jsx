@@ -87,7 +87,7 @@ const callouts = [
     },
 ]
 
- function HomePage() {
+export default function Hp() {
     return (
         < >
             <div className="bg-white">
@@ -289,5 +289,5 @@ const callouts = [
         </>
     );
 }
-export default HomePage;
+
 
