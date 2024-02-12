@@ -2,10 +2,14 @@ import { NavLink } from "react-router-dom";
 // import "./Header.css";
 import MenuIconDark from "../assets/menu-dark.png";
 import CloseMenuIconDark from "../assets/close-menu-dark.png";
+import UserImg from "../assets/user.png";
 
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const user = useSelector((state) => state.user.user);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenuIcon = () => {
@@ -17,7 +21,7 @@ function Header() {
   }, []);
 
   return (
-    <header className=" p-[15px] md:p-[24px] flex flex-row justify-between items-center text-[#083556] bg-white rounded-t-[22px] my-[20px] mx-[28px] md:my-0 xl:mx-[80px] mx-[28px]">
+    <header className=" p-[15px] md:p-[24px] flex flex-row justify-between items-center text-[#083556] bg-transparent rounded-t-[22px] my-[20px] mx-[28px] md:my-0 xl:mx-[80px] mx-[28px]">
       <div className="logo flex items-center hidden md:block">
         <img src="" alt="" />
         <h1 className="text-[28px] ml-8 md:ml-7 lg:text-[32px] font-bold">
@@ -38,7 +42,7 @@ function Header() {
 
         <div className="flex flex-row justify-center items-center">
           <ul
-            className={`flex flex-col md:flex-row items-center  absolute z-10 md:static right-0  left-0 transition-all duration-500 ease-in bg-[#20876E] md:bg-white mx-[28px] md:mx-0 md:mr-[20px] rounded-b-[22px] md:text-[#083556] text-white ${
+            className={`flex flex-col md:flex-row items-center  absolute z-10 md:static right-0  left-0 transition-all duration-500 ease-in bg-[#20876E] md:bg-transparent mx-[28px] md:mx-0 md:mr-[20px] rounded-b-[22px] md:text-[#083556] text-white ${
               isOpen ? "top-[110px] " : "top-[-490px]"
             }`}
           >
@@ -88,14 +92,28 @@ function Header() {
             </li>
           </ul>
 
-          <div className="md:mr-8 md:ml-8 text-xl md:my-0  bg-[#083556] text-white cursor-pointer rounded-[10px]">
-            <button>
-              <NavLink
-                className="text-base lg:text-[24px] md:my-0 md:py-[10px] md:px-[16px] py-[6px] px-[10px] inline-block"
-                to="/signup" >
-                Get Started
-              </NavLink>
-            </button>
+          <div className="md:mr-8">
+            {user ? (
+              <div className="flex items-center ">
+                <span className="lg:text-[18px] block md:inline  text-sm md:mr-8 md:my-0">
+                  Hello <span className="font-bold">{user?.firstName}</span>
+                </span>
+                <img
+                  src={UserImg}
+                  alt=""
+                  className="w-[40px] md:w-[50px] ml-4 text-xl md:my-0 "
+                />
+              </div>
+            ) : (
+              <button className="bg-[#083556] text-white cursor-pointer rounded-[10px]  md:ml-8 text-xl md:my-0">
+                <NavLink
+                  className="text-base lg:text-[24px] md:my-0 md:py-[10px] md:px-[16px] py-[6px] px-[10px] inline-block"
+                  to="/signup"
+                >
+                  Get Started
+                </NavLink>
+              </button>
+            )}
           </div>
         </div>
       </nav>
