@@ -1,4 +1,4 @@
-import "./Coursespage.css";
+import "../index.css";
 
 const features = [
   {
