@@ -13,6 +13,9 @@ import Hp from "./components/hp";
 import UserProfilePage from "./components/UserProfilePage";
 import LessonPage from "./components/lessonPage";
 
+import MyProfile from "./components/MyProfile";
+import EditProfile from "./components/EditProfile";
+import ChangePassword from "./components/ChangePassword";
 
 function App() {
   return (
@@ -30,7 +33,10 @@ function App() {
           <Route path="/logs" element={<Hp />} />
           <Route path="/user/:id" element={<UserProfilePage />} />
           <Route path="/lesson" element={<LessonPage />} />
- 
+
+          <Route path="/user/profile" element={<MyProfile />} />
+          <Route path="/user/edit-profile" element={<EditProfile />} />
+          <Route path="/user/change-password" element={<ChangePassword />} />
         </Routes>
 
         <Footer />

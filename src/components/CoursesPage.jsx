@@ -36,7 +36,7 @@ const featuress = [
     description: "Quisque est ",
   },
   {
-    name: "Advanced security",
+    name: "Advanced securities",
     description: "Arcu egestas d",
   },
   {
@@ -44,19 +44,19 @@ const featuress = [
     description: "Sit quis ",
   },
   {
-    name: "Simple queues",
+    name: "Simple queues2",
     description: "Quisque est ",
   },
   {
-    name: "Advanced security",
+    name: "Advanced security2",
     description: "Arcu egestas.",
   },
   {
-    name: "Simple queues",
+    name: "Simple queues3",
     description: "Quisque est ",
   },
   {
-    name: "Advanced security",
+    name: "Advanced security3",
     description: "Arcu egestas d",
   },
 ];

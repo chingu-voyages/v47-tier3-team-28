@@ -6,14 +6,21 @@ import UserImg from "../assets/user.png";
 
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user.user);
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const toggleMenuIcon = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleProfileIcon = () => {
+    setIsProfileOpen(!isProfileOpen);
   };
 
   useEffect(() => {
@@ -95,24 +102,30 @@ function Header() {
           <div className="md:mr-8">
             {user ? (
               <div className="flex items-center ">
-                <span className="lg:text-[18px] block md:inline  text-sm md:mr-8 md:my-0">
+                <span
+                  onClick={() => navigate("/user/profile")}
+                  className="lg:text-[18px] block md:inline  text-sm md:mr-8 md:my-0"
+                >
                   Hello <span className="font-bold">{user?.firstName}</span>
                 </span>
                 <img
+                  onClick={toggleProfileIcon}
                   src={UserImg}
                   alt=""
-                  className="w-[40px] md:w-[50px] ml-4 text-xl md:my-0 "
+                  className="w-[40px] md:w-[50px] ml-4 text-xl md:my-0 cursor-pointer"
                 />
               </div>
             ) : (
-              <button className="bg-[#083556] text-white cursor-pointer rounded-[10px]  md:ml-8 text-xl md:my-0">
-                <NavLink
-                  className="text-base lg:text-[24px] md:my-0 md:py-[10px] md:px-[16px] py-[6px] px-[10px] inline-block"
-                  to="/signup"
-                >
-                  Get Started
-                </NavLink>
-              </button>
+              <div>
+                <button className="bg-[#083556] text-white cursor-pointer rounded-[10px]  md:ml-8 text-xl md:my-0">
+                  <NavLink
+                    className="text-base lg:text-[24px] md:my-0 md:py-[10px] md:px-[16px] py-[6px] px-[10px] inline-block"
+                    to="/signup"
+                  >
+                    Get Started
+                  </NavLink>
+                </button>
+              </div>
             )}
           </div>
         </div>

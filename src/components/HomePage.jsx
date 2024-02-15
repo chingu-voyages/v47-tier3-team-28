@@ -40,11 +40,11 @@ const featuress = [
     description: "Arcu egestas.",
   },
   {
-    name: "Simple queues",
+    name: "Simple queuess",
     description: "Quisque est ",
   },
   {
-    name: "Advanced security",
+    name: "Advanced securities",
     description: "Arcu egestas d",
   },
 ];
