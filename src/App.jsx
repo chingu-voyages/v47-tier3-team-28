@@ -11,6 +11,8 @@ import SignupForm from "./_auth/forms/SignupForm";
 import SigninForm from "./_auth/forms/SigninForm";
 import Hp from "./components/hp";
 import UserProfilePage from "./components/UserProfilePage";
+import LessonPage from "./components/lessonPage";
+
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="/login" element={<SigninForm />} />
           <Route path="/logs" element={<Hp />} />
           <Route path="/user/:id" element={<UserProfilePage />} />
+          <Route path="/lesson" element={<LessonPage />} />
+ 
         </Routes>
 
         <Footer />

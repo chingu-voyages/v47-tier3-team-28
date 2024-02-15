@@ -1,4 +1,4 @@
-import "./homepage.css";
+import "../index.css";
 
 const features = [
   {
