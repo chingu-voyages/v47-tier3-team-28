@@ -10,7 +10,7 @@ function MyProfile() {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user.user);
 
-  const id = user?._id;
+  const id = user?._id || localStorage.getItem("userId");
   const isInstructor = user?.role === "instructor";
 
   const [userData, setUserData] = useState({});

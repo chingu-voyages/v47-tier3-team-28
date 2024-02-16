@@ -1,5 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { getUser } from "./api/user";
+import { useDispatch } from "react-redux";
+import { setUser } from "./state/user";
 
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
@@ -18,6 +22,20 @@ import EditProfile from "./components/EditProfile";
 import ChangePassword from "./components/ChangePassword";
 
 function App() {
+  const dispatch = useDispatch();
+
+  const id = localStorage.getItem("userId");
+
+  useEffect(() => {
+    if (id) {
+      getUser(id)
+        .then((data) => {
+          dispatch(setUser(data));
+        })
+        .catch((err) => console.log(err));
+    }
+  }, []);
+
   return (
     <div>
       <Router>

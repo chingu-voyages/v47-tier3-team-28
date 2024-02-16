@@ -47,12 +47,14 @@ const Signup = () => {
       signUpStudent(formData).then((student) => {
         dispatch(setUser(student));
         localStorage.setItem("userToken", student.token);
+        localStorage.setItem("userId", student._id);
         navigate("/");
       });
     } else {
       signUpInstructor(formData).then((instructor) => {
         dispatch(setUser(instructor));
         localStorage.setItem("userToken", instructor.token);
+        localStorage.setItem("userId", student._id);
         navigate("/");
       });
     }
