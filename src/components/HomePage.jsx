@@ -83,7 +83,7 @@ function HomePage() {
       <div className="bg-white">
         <div className="relative isolate px-6 pt-14 lg:px-8">
           <div
-            className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+            className="inset-x-0 -top-40 -z-10 overflow-hidden blur-3xl sm:-top-80"
             aria-hidden="true"
           >
             <div
@@ -100,7 +100,7 @@ function HomePage() {
                 <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                   Announcing our next round of funding.{" "}
                   <a href="#" className="font-semibold text-indigo-600">
-                    <span className="absolute inset-0" aria-hidden="true" />
+                    <span className="inset-0" aria-hidden="true" />
                     Read more <span aria-hidden="true">&rarr;</span>
                   </a>
                 </div>
@@ -253,7 +253,7 @@ function HomePage() {
               <div className=" mt-6 space-y-6">
                 <h3 className="mt-6 text-sm text-gray-500">
                   <a href="#">
-                    <span className="absolute inset-0" />
+                    <span className="inset-0" />
                     Desk and Office
                   </a>
                 </h3>
@@ -282,7 +282,7 @@ function HomePage() {
                   </div>
                   <h3 className="mt-6 text-sm text-gray-500">
                     <a href={callout.href}>
-                      <span className="absolute inset-0" />
+                      <span className="inset-0" />
                       {callout.name}
                     </a>
                   </h3>
