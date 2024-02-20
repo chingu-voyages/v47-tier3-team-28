@@ -8,9 +8,3 @@ header a.active:not(button a) {
   color: rgba(32, 135, 110, 1);
   font-weight: bold;
 }
-
-@media only screen and (max-width: 768px) {
-  header a.active:not(button a) {
-    color: #083556;
-  }
-}

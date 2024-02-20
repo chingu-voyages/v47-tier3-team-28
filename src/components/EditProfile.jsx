@@ -1,6 +1,3 @@
-import UserImg from "../assets/user.png";
-import EmailIcon from "../assets/email.png";
-import CourseIcon from "../assets/course.png";
 import { getUser } from "../api/user";
 import { useEffect, useState } from "react";
 import { updateProfile } from "../api/user";
